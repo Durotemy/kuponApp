@@ -1,0 +1,41 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/Cause-Black.ttf",
+      "sha1": "7c78333558e86adc5665328259b1e682c11c6772"
+    },
+    {
+      "path": "assets/fonts/Cause-Bold.ttf",
+      "sha1": "18c219c342399d5e73bcd5515902c5d575ce86f3"
+    },
+    {
+      "path": "assets/fonts/Cause-ExtraBold.ttf",
+      "sha1": "1b365ea4970f5c24f615db118ab305426c4a693c"
+    },
+    {
+      "path": "assets/fonts/Cause-ExtraLight.ttf",
+      "sha1": "c54b89ce6adfbe34d199e12711cbb43e5fb315cc"
+    },
+    {
+      "path": "assets/fonts/Cause-Light.ttf",
+      "sha1": "12a29cc76d3bedc4a291ac5065222dfcf28d4a3d"
+    },
+    {
+      "path": "assets/fonts/Cause-Medium.ttf",
+      "sha1": "b55e163b4e107eea78ab21606015607e02bce27c"
+    },
+    {
+      "path": "assets/fonts/Cause-Regular.ttf",
+      "sha1": "96596d68d0433fe71a54070587efa97c72a68b28"
+    },
+    {
+      "path": "assets/fonts/Cause-SemiBold.ttf",
+      "sha1": "2248a9ffe2b00425897de678bca231f76e62db85"
+    },
+    {
+      "path": "assets/fonts/Cause-Thin.ttf",
+      "sha1": "d5934365a679359de2ef798ca47b8356f529ee29"
+    }
+  ]
+}
