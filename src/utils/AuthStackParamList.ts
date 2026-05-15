@@ -1,5 +1,11 @@
 export type AuthStackParamList = {
   Login: undefined;
-  Signup: undefined;
+  CreateAccount: undefined;
   ForgotPassword: undefined;
+};
+
+export type OnboardingItem = {
+  icon: React.ReactNode;
+  text: string;
+  title: string;
 };

@@ -25,7 +25,7 @@ const fontSizes = {
 
 type textAlign = 'left' | 'right' | 'center';
 
-const margins = {
+export const margins = {
   xs: 10,
   sm: 12,
   md: 14,
@@ -38,6 +38,7 @@ type fontWeight = keyof typeof fontWeights;
 type fontSize = keyof typeof fontSizes;
 type marginTop = keyof typeof margins;
 type marginBottom = keyof typeof margins;
+type marginLeft = keyof typeof margins;
 
 type TextProps = {
   children: React.ReactNode;
@@ -49,6 +50,7 @@ type TextProps = {
   marginTop?: marginTop;
   marginBottom?: marginBottom;
   lineHeight?: number;
+  marginLeft?: marginLeft;
 };
 
 const CustomText = ({
@@ -60,6 +62,7 @@ const CustomText = ({
   textAlign = 'left',
   marginTop,
   marginBottom,
+  marginLeft,
   lineHeight,
 
   ...props
@@ -76,6 +79,7 @@ const CustomText = ({
           marginTop: marginTop ? margins[marginTop] : undefined,
           marginBottom: marginBottom ? margins[marginBottom] : undefined,
           lineHeight: lineHeight ? lineHeight : undefined,
+          marginLeft: marginLeft ? margins[marginLeft] : undefined,
         },
         style,
       ]}

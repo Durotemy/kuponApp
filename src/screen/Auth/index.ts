@@ -1,4 +1,4 @@
-import LoginScreen from './LoginScreen';
-import SignupScreen from './SignupScreen';
+import OnboardingScreen from './OnboardingScreen';
+import CreateAccountScreen from './CreateAccountScreen';
 
-export { LoginScreen, SignupScreen };
+export { OnboardingScreen, CreateAccountScreen };

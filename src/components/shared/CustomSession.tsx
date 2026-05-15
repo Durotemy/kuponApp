@@ -9,9 +9,11 @@ type CustomSectionProps = {
   marginBottom?: number;
   marginHorizontal?: number;
   marginVertical?: number;
-
+  gap?: number;
   justifyContent?: 'center' | 'flex-start' | 'flex-end' | 'space-between';
   alignItems?: 'center' | 'flex-start' | 'flex-end' | 'stretch';
+
+  flexDirection?: 'row' | 'column';
 
   padding?: number;
   paddingTop?: number;
@@ -36,6 +38,9 @@ const CustomSection = ({
 
   justifyContent,
   alignItems,
+
+  flexDirection,
+  gap,
 
   padding,
   paddingTop,
@@ -65,6 +70,9 @@ const CustomSection = ({
           paddingBottom,
           paddingHorizontal,
           paddingVertical,
+
+          flexDirection,
+          gap,
 
           justifyContent,
           alignItems,

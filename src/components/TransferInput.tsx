@@ -17,7 +17,7 @@ const TransferInput = ({
   value,
 }: InputProps) => {
   return (
-    <>
+    <View style={styles.container}>
       <Text style={styles.label}>{label}</Text>
       <TextInput
         placeholder="Put in characters"
@@ -28,13 +28,16 @@ const TransferInput = ({
         onBlur={blurred}
       />
       {error ? <Text style={styles.error}>{error}</Text> : null}
-    </>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
+  container: {
+    marginTop: 15,
+  },
   label: {
-    marginBottom: 6,
+    marginBottom: 2,
     fontSize: 14,
     textTransform: 'capitalize',
   },
