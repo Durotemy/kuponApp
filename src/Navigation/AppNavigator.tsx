@@ -4,18 +4,20 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { HomeScreen } from '../screen/App';
 import { AppStackParamList } from '../utils/AppStackParamList';
+import { MyBottomTabs } from './BottomTabNavigator';
 
-const Stack = createNativeStackNavigator<AppStackParamList>();
+// const Stack = createNativeStackNavigator<AppStackParamList>();
+const Stack = createNativeStackNavigator();
 
 const AppNavigator = () => {
   return (
     <Stack.Navigator
-      initialRouteName="home"
+      initialRouteName="Dashboard"
       screenOptions={{
         headerShown: false,
       }}
     >
-      <Stack.Screen name="home" component={HomeScreen} />
+      <Stack.Screen name="Dashboard" component={MyBottomTabs} />
       {/* <Stack.Screen name="self" component={SelfScreen} /> */}
       {/* <Stack.Screen name="others" component={OtherssScreen} /> */}
     </Stack.Navigator>

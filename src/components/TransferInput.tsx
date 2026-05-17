@@ -7,12 +7,14 @@ type InputProps = {
   blurred: () => void;
   error?: string;
   value: string;
+  keyboardType?: 'numeric' | 'default';
 };
 
 const TransferInput = ({
   label,
   onChangeText,
   blurred,
+  keyboardType = 'default',
   error,
   value,
 }: InputProps) => {
@@ -20,6 +22,7 @@ const TransferInput = ({
     <View style={styles.container}>
       <Text style={styles.label}>{label}</Text>
       <TextInput
+        keyboardType={keyboardType}
         placeholder="Put in characters"
         value={value}
         style={styles.input}
@@ -37,7 +40,7 @@ const styles = StyleSheet.create({
     marginTop: 15,
   },
   label: {
-    marginBottom: 2,
+    marginBottom: 4,
     fontSize: 14,
     textTransform: 'capitalize',
   },

@@ -1,8 +1,8 @@
 import React, { useRef, useState } from 'react';
 import { View, Dimensions, FlatList } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import ScreenContainer from '../../components/Container';
 
-import Layout from '../../components/Container';
 import Dot from '../../../assets/svg/Dot.svg';
 
 import { black, darkYellow, grey, smokeWhite } from '../../constant/palette';
@@ -62,12 +62,12 @@ const OnboardingScreen = () => {
   );
 
   return (
-    <Layout
+    <ScreenContainer
       showButton
       buttonLabel="Sign up"
       footer={
         <>
-          <Button label="Login" onPress={() => {}} />
+          <Button label="Login" onPress={() => navigation.navigate('Login')} />
           <View style={{ height: 12 }} />
           <Button
             label={trackSection === section.length - 1 ? 'Get Started' : 'Next'}
@@ -102,7 +102,7 @@ const OnboardingScreen = () => {
           />
         ))}
       </CustomSection>
-    </Layout>
+    </ScreenContainer>
   );
 };
 
