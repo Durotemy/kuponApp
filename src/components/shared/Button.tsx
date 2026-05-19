@@ -1,12 +1,21 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+  ViewStyle,
+} from 'react-native';
 import React from 'react';
-import { lightestbrown, mildbrown } from '../../constant/palette';
+import { lightestbrown, mildbrown, white } from '../../constant/palette';
 
 type ButtonProps = {
   label: string;
   onPress: () => void;
   isOverlay?: boolean;
   disable?: boolean;
+  width?: ViewStyle['width'];
+  backgroundColor?: string;
+  buttonTextColor?: string;
 };
 
 const Button = ({
@@ -14,20 +23,33 @@ const Button = ({
   onPress,
   isOverlay,
   disable = false,
+  backgroundColor = mildbrown,
+  buttonTextColor = white,
+  width = '100%',
 }: ButtonProps) => {
   return (
     <TouchableOpacity
-      style={
+      style={[
         disable
           ? styles.backgroundDisable
           : isOverlay
           ? styles.overlaybackground
-          : styles.background
-      }
+          : styles.background,
+        { width },
+        { backgroundColor },
+      ]}
       onPress={onPress}
       disabled={disable}
     >
-      <Text style={isOverlay ? styles.isOverLabel : styles.label}>{label}</Text>
+      <Text
+        style={[
+          isOverlay ? styles.isOverLabel : styles.label,
+          { color: buttonTextColor },
+          { fontWeight: 'bold' },
+        ]}
+      >
+        {label}
+      </Text>
     </TouchableOpacity>
   );
 };
@@ -41,6 +63,7 @@ const styles = StyleSheet.create({
     height: 44,
     justifyContent: 'center',
     alignItems: 'center',
+    paddingHorizontal: 20,
   },
   backgroundDisable: {
     backgroundColor: lightestbrown,
@@ -48,6 +71,7 @@ const styles = StyleSheet.create({
     height: 44,
     justifyContent: 'center',
     alignItems: 'center',
+    paddingHorizontal: 20,
   },
   overlaybackground: {
     borderColor: mildbrown,
@@ -56,6 +80,7 @@ const styles = StyleSheet.create({
     height: 44,
     justifyContent: 'center',
     alignItems: 'center',
+    paddingHorizontal: 20,
   },
   label: {
     color: 'white',

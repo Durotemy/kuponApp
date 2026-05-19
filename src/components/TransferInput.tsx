@@ -1,13 +1,25 @@
 import React from 'react';
-import { Text, TextInput, StyleSheet, View } from 'react-native';
+import {
+  Text,
+  TextInput,
+  StyleSheet,
+  View,
+  TouchableOpacity,
+} from 'react-native';
+import { lighterBrown } from '../constant/palette';
 
 type InputProps = {
   label: string;
   onChangeText: (text: string) => void;
-  blurred: () => void;
+  blurred?: () => void;
   error?: string;
   value: string;
   keyboardType?: 'numeric' | 'default';
+  rightIcon?: React.ReactNode;
+  leftIcon?: React.ReactNode;
+  onLeftIconPress?: () => void;
+  onRightIconPress?: () => void;
+  backgroundColor?: string;
 };
 
 const TransferInput = ({
@@ -17,19 +29,50 @@ const TransferInput = ({
   keyboardType = 'default',
   error,
   value,
+  rightIcon,
+  backgroundColor,
+  leftIcon,
+  onRightIconPress,
+  onLeftIconPress,
 }: InputProps) => {
   return (
     <View style={styles.container}>
       <Text style={styles.label}>{label}</Text>
-      <TextInput
-        keyboardType={keyboardType}
-        placeholder="Put in characters"
-        value={value}
-        style={styles.input}
-        maxLength={20}
-        onChangeText={onChangeText}
-        onBlur={blurred}
-      />
+
+      <View
+        style={[
+          styles.inputWrapper,
+          backgroundColor ? { backgroundColor } : null,
+        ]}
+      >
+        {leftIcon ? (
+          <TouchableOpacity
+            onPress={onLeftIconPress}
+            style={styles.leftIconContainer}
+          >
+            {leftIcon}
+          </TouchableOpacity>
+        ) : null}
+        <TextInput
+          keyboardType={keyboardType}
+          placeholder="Put in characters"
+          value={value}
+          style={styles.input}
+          maxLength={20}
+          onChangeText={onChangeText}
+          onBlur={blurred}
+        />
+
+        {rightIcon ? (
+          <TouchableOpacity
+            onPress={onRightIconPress}
+            style={styles.iconContainer}
+          >
+            {rightIcon}
+          </TouchableOpacity>
+        ) : null}
+      </View>
+
       {error ? <Text style={styles.error}>{error}</Text> : null}
     </View>
   );
@@ -45,13 +88,32 @@ const styles = StyleSheet.create({
     textTransform: 'capitalize',
   },
 
-  input: {
+  inputWrapper: {
+    flexDirection: 'row',
+    alignItems: 'center',
     borderWidth: 0.2,
     borderColor: '#bfb4b4',
-    padding: 10,
-    height: 40,
-    borderRadius: 6,
+    borderRadius: 20,
+    paddingHorizontal: 10,
+    height: 48,
   },
+
+  input: {
+    flex: 1,
+  },
+
+  iconContainer: {
+    marginLeft: 8,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  leftIconContainer: {
+    marginRight: 8,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
   error: {
     color: 'red',
     marginTop: 4,

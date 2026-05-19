@@ -11,6 +11,7 @@ type SharedProps = {
 
 export type AppStackParamList = {
   home: undefined;
+  Dashboard?: undefined;
   self: {
     formData: FormType;
     setFormData: React.Dispatch<React.SetStateAction<FormType>>;

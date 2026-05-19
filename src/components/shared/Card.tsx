@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
 
-type CustomSectionProps = {
+type CardProps = {
   children: React.ReactNode;
 
   margin?: number;
@@ -29,7 +29,7 @@ type CustomSectionProps = {
   style?: StyleProp<ViewStyle>;
 };
 
-const CustomSection = ({
+const Card = ({
   children,
 
   margin,
@@ -52,11 +52,11 @@ const CustomSection = ({
 
   width,
 
-  backgroundColor = 'transparent',
+  backgroundColor = '',
   borderRadius = 16,
 
   style,
-}: CustomSectionProps) => {
+}: CardProps) => {
   return (
     <View
       style={[
@@ -94,7 +94,7 @@ const CustomSection = ({
   );
 };
 
-export default CustomSection;
+export default Card;
 
 const styles = StyleSheet.create({
   container: {
