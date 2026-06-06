@@ -34,8 +34,6 @@ const Login = () => {
     });
   };
 
-  console.log('userrrrr', user);
-
   const isDisable = !formData.email || !formData.password;
   return (
     <ScreenContainer>

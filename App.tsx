@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { StatusBar, StyleSheet, Text } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import SplashScreen from 'react-native-splash-screen';
 
 import RootNavigator from './src/roots';
 import { AuthProvider } from './src/context/authContext';

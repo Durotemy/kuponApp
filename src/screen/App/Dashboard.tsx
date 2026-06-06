@@ -16,6 +16,7 @@ import {
   useAuthNavigation,
 } from '../../hooks/useNavigationHook';
 import { DrawerActions, useNavigation } from '@react-navigation/native';
+import { useProduct } from '../../queries/productQueries';
 
 const renderItem = ({ item }: { item: ContentType }) => (
   <CustomSection
@@ -51,8 +52,12 @@ const renderItem = ({ item }: { item: ContentType }) => (
 );
 
 const Dashboard = () => {
-  const navigation = useAppNavigation();
   const navigations = useNavigation();
+  const { data, error, isLoading, isError } = useProduct();
+  console.log('data', data);
+  console.log('error', error);
+  console.log('isLoading', isLoading);
+  console.log('isError', isError);
 
   const { filteredItem, search, setSearch } = useFilterHook(
     content,

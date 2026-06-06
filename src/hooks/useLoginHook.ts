@@ -43,7 +43,10 @@ export const useLoginHook = () => {
           [field]: `${field} cannot be empty`,
         }));
         isValid = false;
-      } else if (field === 'email' && !value.includes('@')) {
+      } else if (
+        field === 'email' &&
+        !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)
+      ) {
         setError(prev => ({
           ...prev,
           [field]: `${field} Invalid email address`,

@@ -36,7 +36,7 @@ const Button = ({
           ? styles.overlaybackground
           : styles.background,
         { width },
-        { backgroundColor },
+        !disable && { backgroundColor },
       ]}
       onPress={onPress}
       disabled={disable}

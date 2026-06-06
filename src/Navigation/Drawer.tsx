@@ -1,9 +1,11 @@
 import React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { MyBottomTabs } from './BottomTabNavigator';
-import Profile from '../screen/App/Profile';
 
-// extra screens you want in drawer
+import MarketIcon from '../../assets/svg/market.svg';
+import SellItem from '../../assets/svg/SellItem.svg';
+import SendPackage from '../../assets/svg/CarIcon.svg';
+import Profile from '../screen/App/Profile';
 
 const Drawer = createDrawerNavigator();
 
@@ -20,9 +22,44 @@ const AppDrawer = () => {
         options={{ title: 'Home' }}
       />
 
-      <Drawer.Screen name="profile" component={Profile} />
+      <Drawer.Screen
+        name="Market place"
+        component={Profile}
+        options={{
+          drawerIcon: ({ color, size }) => <SellItem />,
+        }}
+      />
+      <Drawer.Screen
+        name="Sell Item"
+        component={Profile}
+        options={{
+          drawerIcon: ({ color, size }) => <SellItem />,
+        }}
+      />
+      <Drawer.Screen
+        name="Send Package "
+        component={Profile}
+        options={{
+          drawerIcon: ({ color, size }) => <SendPackage />,
+        }}
+      />
     </Drawer.Navigator>
   );
 };
 
 export default AppDrawer;
+
+// features/auth/
+//   screens/
+//     LoginScreen.tsx
+//     RegisterScreen.tsx
+
+//   hooks/
+//     useLogin.ts
+//     useRegister.ts
+
+//   services/
+//     authService.ts
+
+//   types/
+//     auth.types.ts

@@ -23,3 +23,12 @@ export interface ContentType {
 export type dataType = {
   name: string;
 };
+
+export type NormalizedFile = {
+  uri: string;
+  name: string;
+  mimeType?: string;
+  extension?: string;
+  kind: 'image' | 'pdf' | 'unknown';
+  size: number | null;
+};

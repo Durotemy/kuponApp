@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { dataType, dataTypes } from '../screen/App/Dashboard';
 
 export const useFilterHook = <T,>(data: T[], getText: (item: T) => string) => {
   const [search, setSearch] = useState('');
@@ -16,17 +15,3 @@ export const useFilterHook = <T,>(data: T[], getText: (item: T) => string) => {
 };
 
 export default useFilterHook;
-
-// const datas: dataTypes[] = [
-//   {
-//     label: 'duro',
-//   },
-//   {
-//     label: 'femi',
-//   },
-//   {
-//     label: 'james',
-//   },
-// ];
-
-// const {} = useFilterHook(datas, item=> item.label)

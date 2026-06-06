@@ -11,3 +11,6 @@ export const brightBrown = '#D97800';
 export const darkGreen = '#00696C';
 export const yellowGreen = '#E9C400';
 export const yellow = '#FFE16E';
+export const faintYellow = '#FFDCC2';
+export const darkBrown = '#6D3900';
+export const brown = '#FFB77C';

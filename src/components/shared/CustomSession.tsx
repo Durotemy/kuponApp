@@ -4,6 +4,10 @@ import { StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
 type CustomSectionProps = {
   children: React.ReactNode;
 
+  borderStyle?: 'solid' | 'dashed';
+  borderWidth?: number;
+  borderColor?: string;
+
   margin?: number;
   marginTop?: number;
   marginBottom?: number;
@@ -22,6 +26,7 @@ type CustomSectionProps = {
   paddingVertical?: number;
 
   width?: ViewStyle['width'];
+  height?: ViewStyle['height'];
 
   backgroundColor?: string;
   borderRadius?: number;
@@ -40,7 +45,8 @@ const CustomSection = ({
 
   justifyContent,
   alignItems,
-
+  borderStyle,
+  borderColor,
   flexDirection,
   gap,
 
@@ -51,9 +57,11 @@ const CustomSection = ({
   paddingVertical,
 
   width,
+  height,
 
   backgroundColor = 'transparent',
   borderRadius = 16,
+  borderWidth,
 
   style,
 }: CustomSectionProps) => {
@@ -68,7 +76,9 @@ const CustomSection = ({
           marginBottom,
           marginHorizontal,
           marginVertical,
+
           width: width,
+          height: height,
 
           padding,
           paddingTop,
@@ -84,6 +94,10 @@ const CustomSection = ({
 
           backgroundColor,
           borderRadius,
+
+          borderStyle,
+          borderWidth,
+          borderColor,
         },
 
         style,
